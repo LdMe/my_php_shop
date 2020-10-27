@@ -103,12 +103,12 @@ class DBManager{
 }
 //      TEST   
 //-----initialize database manager  
-/*
-$date = date('Y/m/d');
-$dbm = new DBManager("users");
-*/
+
+//$date = date('Y/m/d');
+//$dbm = new DBManager("users");
+
 //-----get user by id
-//var_dump($dbm->getById(4));
+//var_dump($dbm->getById(1));
 
 //-----get all users
 //var_dump($dbm->getAll());

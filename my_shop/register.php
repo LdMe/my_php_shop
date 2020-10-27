@@ -61,10 +61,10 @@
 		<input type="string" name="email">
 		<br>
 		<label for="password">password</label>
-		<input type="string" name="password">
+		<input type="password" name="password">
 		<br>
 		<label for="password_confirm">Confirm password</label>
-		<input type="string" name="password_confirm">
+		<input type="password" name="password_confirm">
 		<br>
 		<button type="submit">register</button>
 	</form>
