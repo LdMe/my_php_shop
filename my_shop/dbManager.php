@@ -47,6 +47,18 @@ class DBManager{
 
 		$sql = "INSERT INTO $this->table ";
 
+		$sql .= $this->formatColumns($columns);
+		$sql .=" VALUES ";
+		$sql .= $this->formatValues($values);
+		
+		$sql .=";";
+		$stmt = $this->connection->prepare($sql);
+		$stmt->execute($values);
+	}
+	// FUNCTION TO FORMAT THE ARRAY OF COLUMNS FOR INSERT
+	// EXAMPLE RESULT: (name,email,password)
+	public function formatColumns($columns){
+		$sql="";
 		for ($i=0; $i < sizeof($columns); $i++) { 
 			if($i ==0){
 				$sql .="(";
@@ -59,7 +71,13 @@ class DBManager{
 				$sql .=")";
 			}
 		}
-		$sql .=" VALUES ";
+		return $sql;
+
+	}
+	// FUNCTION TO FORMAT THE ARRAY OF VALUES FOR INSERT
+	// EXAMPLE RESULT: (?,?,?)
+	public function formatValues($values){
+		$sql="";
 		for ($i=0; $i < sizeof($values); $i++) { 
 			if($i ==0){
 				$sql .="(";
@@ -72,9 +90,8 @@ class DBManager{
 				$sql .=")";
 			}
 		}
-		$sql .=";";
-		$stmt = $this->connection->prepare($sql);
-		$stmt->execute($values);
+		return $sql;
+
 	}
 	public function updateById($id,$columns,$values)
 	{
