@@ -25,6 +25,7 @@
 				echo "User exists!!<br>";
 				$password = $_POST["password"];
 				// CHECK IF THE PASSWORD IS CORRECT
+				// REMEMBER: THIS FUNCTION WILL ONLY WORK IF YOU HASH YOUR PASSWORD WITH 'password_hash()' CHANGE IF USING DIFFERENT ALGORITHM
 				if(password_verify($password, $user_data["password"])){
 					echo "password is the same!<br>";
 					// TODO: SAVE THE USER IN SESSION / COOKIES
