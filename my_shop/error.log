@@ -1,7 +1,0 @@
-PDOException: SQLSTATE[HY000] [1044] Access denied for user 'user'@'localhost' to database 'my_shop' in /home/ldme/Rendu/myshop/db_pdo.php:8
-Stack trace:
-#0 /home/ldme/Rendu/myshop/db_pdo.php(8): PDO->__construct()
-#1 /home/ldme/Rendu/myshop/dbManager.php(9): connect_db()
-#2 /home/ldme/Rendu/myshop/user.php(7): DBManager->__construct()
-#3 /home/ldme/Rendu/myshop/user.php(18): User->__construct()
-#4 {main}
