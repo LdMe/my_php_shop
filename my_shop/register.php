@@ -26,22 +26,12 @@
 			// IF THE USER DOESN'T EXIST, WE CHECK ALL THE VALUES (PASSWORD, EMAIL...) AND INSERT A NEW USER
 				else{
 					echo "user doesn't exist!!<br>";
-				// TODO: CHECK EMAIL, PASSWORDS, ETC. AND HASH PASSWORD!!!
-				//PUT YOUR CODE HERE:
+				
 					$error =false;
-					if(strlen($_POST["username"]) < 4){
-						$error =true;
-						echo "Username must be longer than 3 characters<br>";
-					}
-					if(!isset($_POST["email"]) || !filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)){
-						$error =true;
-						echo "Email is not valid<br>";
-					}
-					if(!isset($_POST["password"]) || $_POST["password"] != $_POST["password_confirm"])
-					{
-						$error=true;
-						echo "Password not correct<br>";
-					}
+					// TODO: CHECK EMAIL, PASSWORDS, ETC. AND HASH PASSWORD!!!
+					//PUT YOUR CODE HERE:
+
+					
 					if(!$error){
 						$columns= ["username","password","email","admin"];
 						$values = [$_POST["username"],password_hash($_POST["password"], PASSWORD_DEFAULT),$_POST["email"],0];

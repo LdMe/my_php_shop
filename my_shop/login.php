@@ -31,7 +31,7 @@
 					echo "password is the same!<br>";
 					// TODO: SAVE THE USER IN SESSION / COOKIES
 					//PUT YOUR CODE HERE
-					setcookie("username",$user_data["username"],time()+3600* 24);
+					
 
 					//
 				}
