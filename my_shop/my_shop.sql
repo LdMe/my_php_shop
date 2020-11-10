@@ -70,7 +70,7 @@ INSERT INTO users (username,password,email,admin) VALUES ("admin","admin","admin
 
 DROP USER IF EXISTS 'user'@'localhost';
 CREATE USER 'user'@'localhost' IDENTIFIED BY '123';
-GRANT ALL PRIVILEGES ON my_shop.* TO 'user'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'user'@'localhost';
 
 -- Export de données de la table my_shop.users : ~0 rows (environ)
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
